@@ -13,6 +13,16 @@ Related docs:
 - [document.md](./document.md)
 - [technical_document.md](./technical_document.md)
 
+## UI Screenshots
+
+### Neutral classroom state
+
+![Neutral classroom dashboard](./docs/images/dashboard-neutral.png)
+
+### Engaged classroom state
+
+![Engaged classroom dashboard](./docs/images/dashboard-engaged.png)
+
 ## What This Project Does
 
 The system reads a live or recorded video source and estimates:
