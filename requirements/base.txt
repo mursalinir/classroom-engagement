@@ -1,0 +1,13 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+streamlit>=1.40
+opencv-python>=4.10
+numpy>=1.26
+onnxruntime>=1.19
+pandas>=2.2
+supervision>=0.28
+pydantic>=2.8
+PyYAML>=6.0
+python-dotenv>=1.0
+loguru>=0.7
+rich>=13.7

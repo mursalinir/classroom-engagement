@@ -1,0 +1,6 @@
+pytest>=8.3
+httpx>=0.28
+black>=24.8
+ruff>=0.6
+mypy>=1.11
+ipykernel>=6.29

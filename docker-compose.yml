@@ -1,0 +1,53 @@
+services:
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: classroom-engagement-streamlit
+    command:
+      - streamlit
+      - run
+      - apps/streamlit_app/app.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+    environment:
+      APP_ENV: docker
+      CONFIG_DIR: /app/configs
+      SESSION_OUTPUT_DIR: /app/outputs/sessions
+      SOURCE_TYPE: webcam
+      SOURCE_URI: "0"
+      DETECTOR_NAME: hybrid_person
+      TRACKER_NAME: bytetrack
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./outputs:/app/outputs
+      - ./data:/app/data
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: classroom-engagement-api
+    command:
+      - uvicorn
+      - apps.api.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+    environment:
+      APP_ENV: docker
+      CONFIG_DIR: /app/configs
+      SESSION_OUTPUT_DIR: /app/outputs/sessions
+      SOURCE_TYPE: webcam
+      SOURCE_URI: "0"
+      DETECTOR_NAME: hybrid_person
+      TRACKER_NAME: bytetrack
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./outputs:/app/outputs
+      - ./data:/app/data
+    restart: unless-stopped

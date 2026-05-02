@@ -1,0 +1,9 @@
+onnxruntime-directml>=1.23
+torch>=2.4
+torchvision>=0.19
+mediapipe>=0.10
+openvino>=2024.0
+scikit-learn>=1.5
+xgboost>=2.1
+mlflow>=2.16
+dvc>=3.55

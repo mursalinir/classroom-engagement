@@ -1,0 +1,23 @@
+app:
+  name: classroom-engagement-analytics
+  env: dev
+  timezone: Asia/Dhaka
+  log_level: INFO
+
+io:
+  source_type: webcam
+  source_uri: 0
+  session_output_dir: outputs/sessions
+
+runtime:
+  target_fps: 15
+  max_frame_width: 1280
+  rolling_window_seconds: 30
+
+exit_zone:
+  enabled: true
+  x1_ratio: 0.78
+  y1_ratio: 0.15
+  x2_ratio: 0.98
+  y2_ratio: 0.95
+  min_frames_in_zone: 1
